@@ -1,0 +1,42 @@
+Startup parameters:
+    1. One or more "*.properties" file names ordered by priority descending.
+        At least one of these files should exist.
+    2. An Int64 number, that game engine will use to initialize the generator of random numbers.
+        If not specified, the value of "seed" property will be used.
+        If the "seed" property is also not specified, the generator will be initialized using the current time.
+
+
+Playback control:
+    Space - pause/play.
+    Up/Down - speed up/slow down.
+    Right - show next frame (only when paused).
+    H - switch display mode.
+    Alt (hold) - show life and mana values.
+    Ctrl + +/-/0 - change scale.
+    Tab - minimap on/off.
+    1-9, 0 - follow the corresponding wizard.
+
+
+Keyboard player:
+    W - move forward
+    S - move backward
+    A - strafe left
+    D - strafe right
+    <, NUMPAD_4 - turn left
+    >, NUMPAD_6 - turn right
+    Q - melee attack
+    E - magic missile
+    R - frost bolt
+    F - fireball
+    X - haste
+    C - shield
+
+
+Game results file:
+    a. First line: game verdict.
+        OK - the game was successfully tested.
+        FAILED - got unexpected error while testing the game (for example, the strategy connection port 31001 is already in use).
+    b. Second line: the "SEED" keyword and the number used to initialize the generator of random numbers,
+        for example, "SEED 126522099021038".
+    c. Third and each next line: the result of participation of one strategy in ascending order of the strategy index.
+        Record format: "<place> <score> <verdict>", for example, "1 3576 OK" or "4 0 CRASHED".

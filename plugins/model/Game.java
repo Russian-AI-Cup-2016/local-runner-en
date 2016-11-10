@@ -789,12 +789,10 @@ public class Game {
     /**
      * @return the interval at which appears a bonus.
      * <p>
-     * Every time after the specified interval, the game engine checks the number of bonuses on the map and creates a
-     * new bonus if it is zero. The bonus is created at a randomly selected point from the two available
+     * Every $2500$ ticks up to two bonuses may appear on the map. The bonuses are created at the two following points:
      * ({@code mapSize * 0.3}, {@code mapSize * 0.3}) and ({@code mapSize * 0.7}, {@code mapSize * 0.7}). If any part of
-     * the bonus area is already occupied by a wizard, the game engine will attempt to create a bonus at a different
-     * point in the list. In case of failure, the creation of a bonus will not happen and will be delayed until the end
-     * of the next interval.
+     * the new bonus area is already occupied by a wizard or by an existing bonus, then the creation of the bonus will
+     * be postponed till the end of the next interval.
      */
     public int getBonusAppearanceIntervalTicks() {
         return bonusAppearanceIntervalTicks;

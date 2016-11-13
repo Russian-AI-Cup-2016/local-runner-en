@@ -33,7 +33,7 @@ public class Status {
     }
 
     /**
-     * @return the ID of the wizard casted this status or {code -1}.
+     * @return the ID of the wizard casted this status or {@code -1}.
      */
     public long getWizardId() {
         return wizardId;
